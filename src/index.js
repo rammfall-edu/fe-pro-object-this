@@ -5,31 +5,31 @@ export const hotel = {
   bankAccount: 0,
   guests: {},
 
-  getLength(){
+  getLength() {
     const objectInArray = Object.keys(this.guests);
     return objectInArray.length;
   },
 
-  getActualFreePlace(){
+  getActualFreePlace() {
     return this.quantityOfPlaces - this.getLength();
   },
 
-  paidPerPlace(){
+  paidPerPlace() {
     this.bankAccount += this.priceByPlace;
   },
-  
-  checkInGuest(firstName, lastName, avaiilableBalance){
+
+  checkInGuest(firstName, lastName, avaiilableBalance) {
     if (this.getLength() === this.quantityOfPlaces) {
-      return 'Sorry, we have not free spaces'
+      return 'Sorry, we have not free spaces';
     } else if (avaiilableBalance < this.priceByPlace) {
-      return 'Sorry, you have not enough money'
+      return 'Sorry, you have not enough money';
     } else {
       this.paidPerPlace();
       this.guests[this.getLength()] = {
         firstName,
         lastName,
         money: avaiilableBalance - this.priceByPlace,
-      }
+      };
     }
   },
 };
