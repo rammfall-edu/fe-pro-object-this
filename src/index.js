@@ -1,10 +1,8 @@
 export const hotel = {
   quantityOfPlaces: 30,
   priceByPlace: 20,
-
   bankAccount: 0,
   guests: {},
-
   getLength() {
     const objectInArray = Object.keys(this.guests);
     return objectInArray.length;
