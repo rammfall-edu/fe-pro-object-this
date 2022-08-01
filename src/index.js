@@ -18,9 +18,9 @@ export const hotel = {
 
   checkInGuest(firstName, lastName, avaiilableBalance) {
     if (this.getLength() === this.quantityOfPlaces) {
-      return 'Sorry, we have not free spaces';
+      return 'Sorry, we do not have free spaces';
     } else if (avaiilableBalance < this.priceByPlace) {
-      return 'Sorry, you have not enough money';
+      return 'Sorry, you do not have enough money'; // or Sorry, you have insufficient money.
     } else {
       this.paidPerPlace();
       const newUser = {
