@@ -23,11 +23,13 @@ export const hotel = {
       return 'Sorry, you have not enough money';
     } else {
       this.paidPerPlace();
-      this.guests[this.getLength()] = {
+      const newUser = {
         firstName,
         lastName,
         money: avaiilableBalance - this.priceByPlace,
       };
+      this.guests[this.getLength()] = newUser;
+      return newUser;
     }
   },
 };
